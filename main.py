@@ -9,8 +9,7 @@ import cv2
 import pickle
 
 import canvas
-
-# %% Arayüz        
+        
 class Window(QMainWindow):
     
     def __init__(self):

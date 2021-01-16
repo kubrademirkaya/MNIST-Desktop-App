@@ -1,3 +1,5 @@
+#kütüphaneler
+print("kütüphaneler yükleniyor")
 import pickle
 from sklearn.svm import SVC
 from keras.datasets import mnist
@@ -24,14 +26,9 @@ modelSVM.fit(x_train, y_train)
 print("test işlemi yapılıp, tahminler kaydediliyor")
 y_pred = modelSVM.predict(x_test)
 
-
+#model kaydediliyor
 model = 'modelSVM.pkl'
 pickle.dump(modelSVM, open(model, 'wb'))
 
-
+#model yükleniyor
 model = pickle.load(open('modelSVM.pkl', 'rb'))
-from sklearn.metrics import confusion_matrix
-cm = confusion_matrix(y_test, y_pred)
-print("\n")
-print(cm)
-

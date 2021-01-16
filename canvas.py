@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
 
-
 class Canvas(QMainWindow):
     
     def __init__(self):

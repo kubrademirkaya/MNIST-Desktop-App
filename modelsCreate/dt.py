@@ -29,8 +29,9 @@ print("model test edilip tahminler kaydediliyor")
 y_pred = modelDT.predict(x_test)
 
 
+#model kaydediliyor
 model = 'modelDT.pkl'
 pickle.dump(modelDT, open(model, 'wb'))
 
-
+#model yükleniyor
 model = pickle.load(open('modelDT.pkl', 'rb'))

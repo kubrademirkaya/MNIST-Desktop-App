@@ -9,21 +9,17 @@ from keras.datasets import mnist
 from keras.models import Sequential, load_model
 from keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPooling2D
 
-import pickle
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.tree import DecisionTreeClassifier
-
-# %% Veri setinin yüklenmesi
+#veri setinin yüklenmesi
 (x_train, y_train),(x_test, y_test) = mnist.load_data()
 
-# %% Sinir ağları için veri ön işleme
+#veri ön işleme
 img_rows = 28
 img_cols = 28
 x_train = x_train.reshape( x_train.shape[0],img_rows,img_cols,1)
 x_test = x_test.reshape( x_test.shape[0],img_rows,img_cols,1)
 input_shape = (img_rows,img_cols,1)
 
-# normalizasyon
+#normalizasyon
 x_train = x_train.astype("float32")
 x_test = x_test.astype("float32")
 
@@ -35,7 +31,7 @@ num_classes = 10
 y_train = keras.utils.to_categorical(y_train,num_classes)
 y_test = keras.utils.to_categorical(y_test,num_classes)
         
-# %% CNN yapısı
+#CNN yapısı
 model_list = []
 score_list = []
 
@@ -78,7 +74,7 @@ for i in range(3):
     
     
 
-# %% modellerin yüklenmesi
+#modellerin yüklenmesi
 modelCNN1 = load_model("modelCNN1.h5")
 modelCNN2 = load_model("modelCNN2.h5")
 modelCNN3 = load_model("modelCNN3.h5")
